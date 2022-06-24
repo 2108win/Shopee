@@ -50,10 +50,10 @@ html {
 }
 
 body {
-  font-size: 62.5%;
+  font-size: 16px;
   font-family: "Noto Sans", "Poppins", sans-serif;
-  line-height: 1.6rem;
   scroll-behavior: smooth;
+  line-height: 1.2;
 }
 
 .is-hidden {
@@ -63,6 +63,15 @@ body {
 .is-visible {
   display: block !important;
   opacity: 1;
+}
+
+.cursor-dissabled {
+  cursor: default !important;
+  color: inherit;
+}
+.cursor-dissabled:hover {
+  text-shadow: none !important;
+  color: #fff !important;
 }
 
 .grid {
@@ -86,12 +95,211 @@ body {
   margin: 0 auto;
 }
 
+a {
+  color: inherit;
+}
+
+.fw-400 {
+  font-weight: 400 !important;
+}
+
 .header {
   height: 120px;
   background-image: linear-gradient(180deg, #f5402d 0%, #ff6533 100%);
 }
 .header-nav {
+  width: 100%;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 35px;
+}
+.header-nav-qrcode {
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+.header-nav-qrcode-content {
+  background-color: transparent;
+  display: none;
+  position: absolute;
+  top: 0px;
+  left: -5px;
+  width: 180px;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+}
+.header-nav-qrcode-content-img {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  width: 100%;
+  height: 100%;
+  margin-top: 25px;
+  border-radius: 4px;
+}
+.header-nav-qrcode-content-logo {
+  display: flex;
+}
+.header-nav-qrcode-content-logo-img {
+  max-width: 50px;
+}
+.header-nav-qrcode:hover > .header-nav-qrcode-content {
+  display: block !important;
+  opacity: 1 !important;
+}
+.header-nav-list {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  height: 34px;
+  gap: 15px;
+}
+.header-nav-item {
+  font-size: 13px;
+  font-weight: 300;
+  color: #fff;
+  position: relative;
+  cursor: pointer;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.header-nav-item:hover {
+  color: #ccc;
+  text-shadow: 0 0 3px #ccc;
+}
+.header-nav-item-icon {
+  color: #fff;
+  font-size: 18px;
+}
+.header-nav-item:first-child {
+  margin-left: 0;
+}
+.header-nav-item:last-child {
+  margin-right: 0;
+}
+.header-nav-item.nav-divided + .nav-divided::before {
+  position: absolute;
+  content: "";
+  left: -8px;
+  height: 14px;
+  width: 2px;
+  background-color: #fff;
+  opacity: 0.5;
+}
+.header-main {
+  display: flex;
+  margin: auto 0;
+  padding: 16px 0 10px;
+  height: 85px;
+  width: 100%;
+}
+.header-main-logo {
+  padding-right: 40px;
+}
+.header-main-logo-svg {
+  fill: #fff;
+  width: 162px;
+  height: 50px;
+}
+.header-main-search {
+  width: 100%;
+  max-width: 840px;
+}
+.header-main-search-searchbar {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border: 3px solid #fff;
+  border-radius: 2px;
+  height: 40px;
+  width: 100%;
+}
+.header-main-search-searchbar-input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  color: initial;
+  padding: 0 10px;
+  font-size: 14px;
+}
+.header-main-search-searchbar-input:focus {
+  outline: 2px solid #000;
+}
+.header-main-search-searchbar-button {
+  background-color: #ff6533;
+  outline: none;
+  border: none;
+  height: 100%;
+  padding: 0 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header-main-search-searchbar-button:hover {
+  background-color: rgba(255, 102, 51, 0.8666666667);
+}
+.header-main-search-searchbar-button-icon {
+  color: #fff;
+  width: 14px;
+  margin: 0 8px;
+}
+.header-main-search-searchbar:focus {
+  border: 1px solid #fff;
+}
+.header-main-search-recommend-list {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  gap: 15px;
+  margin: 5px 0;
+}
+.header-main-search-recommend-item {
+  color: #fff;
+}
+.header-main-search-recommend-item-link {
+  font-size: 12px;
+  margin: 5px 0 13px;
+  color: #fff;
+  text-decoration: none;
+}
+.header-main-search-recommend-item-link:hover {
+  color: #ccc;
+}
+.header-main-shoppingcart {
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header-main-shoppingcart-icon {
+  position: relative;
+}
+.header-main-shoppingcart-icon-svg {
+  fill: #fff;
+  width: 26px;
+  height: 26px;
+  color: #fff;
+  stroke: #fff;
+  margin: 0 8px;
+  position: relative;
+}
+.header-main-shoppingcart-count {
+  position: absolute;
+  height: 20px;
+  width: 25px;
+  top: -8px;
+  right: -5px;
+  background-color: #fff;
+  color: #ff6533;
+  font-size: 14px;
+  border-radius: 10px;
+  padding: 0 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /*# sourceMappingURL=app.css.map */
