@@ -227,7 +227,8 @@ a {
   transition: all 0.3s ease-in-out;
   opacity: 0;
   display: none;
-  animation: fadeIn 0.3s ease-in-out;
+  animation: growth 0.3s ease-in-out;
+  transform-origin: calc(100% - 20px) 0px -10px;
 }
 .header-nav-notify:before {
   content: "";
@@ -550,6 +551,17 @@ a {
 }
 .header-main-shoppingcart-count span {
   line-height: 0;
+}
+
+@keyframes growth {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 /*# sourceMappingURL=app.css.map */
