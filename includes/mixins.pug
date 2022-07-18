@@ -1,4 +1,4 @@
-mixin notifyItem(link, image, name, desc)
+mixin notifyItem(link, image, name, desc, more1, more2, more3)
   li.header-nav-notify-list-item
     a.header-nav-notify-list-item-link(href= link)
       .header-nav-notify-list-item-content
@@ -7,6 +7,10 @@ mixin notifyItem(link, image, name, desc)
         .header-nav-notify-list-item-content-text
           p.header-nav-notify-list-item-content-text-name= name
           p.header-nav-notify-list-item-content-text-desc= desc
+          p.header-nav-notify-list-item-content-text-more
+            img.header-nav-notify-list-item-content-text-more-img(src= more1, alt='')
+            img.header-nav-notify-list-item-content-text-more-img(src= more2, alt='')
+            img.header-nav-notify-list-item-content-text-more-img(src= more3, alt='')
 
 mixin searchRecommendItem(name)
   li.header-main-search-recommend-item
@@ -16,8 +20,7 @@ mixin shoppingcartItem(link, image, name, price)
   li.header-main-shoppingcart-list-item
     a.header-main-shoppingcart-list-item-link(href= link)
       .header-main-shoppingcart-list-item-content
-        .header-main-shoppingcart-list-item-content-img
-          img(src= image, alt='')
+        img.header-main-shoppingcart-list-item-content-img(src= image, alt='')
         .header-main-shoppingcart-list-item-content-text
           .header-main-shoppingcart-list-item-content-text-name= name
           .header-main-shoppingcart-list-item-content-text-price= price

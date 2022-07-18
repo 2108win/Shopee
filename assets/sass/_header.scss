@@ -187,7 +187,7 @@
       &-list {
         display: flex;
         flex-direction: column;
-
+        list-style-type: none;
         &-item {
           background-color: #fff0ee;
           padding: 10px;
@@ -210,7 +210,6 @@
               img {
                 width: 40px;
                 height: 40px;
-                border-radius: 8px;
               }
             }
 
@@ -218,12 +217,9 @@
               font-size: 14px;
               font-weight: 300;
               color: $gray-color-dark;
-
               &-name {
-                text-transform: uppercase;
                 margin-bottom: 5px;
               }
-
               &-desc {
                 font-size: 12px;
                 font-weight: 300;
@@ -234,6 +230,17 @@
                 overflow: hidden;
                 text-overflow: ellipsis;
                 word-break: break-word;
+                margin-bottom: 8px;
+              }
+              &-more {
+                display: flex;
+                gap: 12px;
+                &-img {
+                  max-width: 100px;
+                  max-height: 100px;
+                  border: none;
+                  outline: none;
+                }
               }
             }
           }
@@ -313,9 +320,9 @@
         height: 23px;
         width: 23px;
         overflow: hidden;
-
+        border: 1px solid $gray-color-light;
         i {
-          font-size: 29px;
+          font-size: 28px;
           color: $text-color-hover  !important;
         }
       }
@@ -467,7 +474,7 @@
             text-decoration: none;
 
             &:hover {
-              color: $text-color-hover;
+              opacity: 0.6;
             }
           }
         }
@@ -509,7 +516,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-
+        border: 2px solid #f05d40;
         span {
           line-height: 0;
         }
@@ -544,7 +551,7 @@
 
       &-list {
         position: relative;
-        max-height: 400px;
+        max-height: 410px;
         width: 400px;
         min-height: 250px;
         background-color: $text-color;
@@ -575,7 +582,6 @@
             margin-top: 10px;
           }
         }
-
         &-top {
           background-color: #fff;
           height: 40px;
@@ -588,7 +594,6 @@
           border-radius: 4px 4px 0 0;
           font-weight: 300;
         }
-
         &-item {
           display: flex;
           flex-direction: column;
@@ -608,16 +613,12 @@
             padding: 10px;
             gap: 10px;
             width: 100%;
-
             &-img {
-              border: 1px solid #eee;
+              border: 1px solid #ddd;
               min-width: 42px;
+              max-width: 42px;
+              max-height: 42px;
               object-fit: cover;
-
-              img {
-                width: 42px;
-                height: 42px;
-              }
             }
 
             &-text {
@@ -626,14 +627,13 @@
               gap: 20px;
               justify-content: space-between;
               width: 100%;
-
               &-name {
                 color: $gray-color-dark;
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
+                max-width: 230px;
               }
-
               &-price {
                 color: $price-color;
               }
@@ -647,6 +647,30 @@
 
           &:hover .header-main-shoppingcart-list-item-text {
             color: #00bfa5;
+          }
+        }
+        &-bottom {
+          background-color: #fff;
+          padding: 10px;
+          height: 60px;
+          width: 100%;
+          display: flex;
+          justify-content: flex-end;
+          &-button {
+            text-decoration: none;
+            color: $text-color;
+            padding: 0 15px;
+            font-size: 14px;
+            background-color: $btn-orange;
+            text-align: center;
+            border: none;
+            outline: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &:hover {
+              background-color: $btn-orange-hover;
+            }
           }
         }
       }

@@ -26,8 +26,8 @@ header.header
             .header-nav-notify
               .header-nav-notify-top Thông báo mới nhất
               ul.header-nav-notify-list
-                +notifyItem("#", "./assets/images/main-images/notify-1.png", "Mĩ phẩm nam nữ", "Sản phẩm đẹp mắt")
-                +notifyItem("#", "./assets/images/main-images/notify-1.png", "Mĩ phẩm nam nữ", "Sản phẩm đẹp mắt")
+                +notifyItem("#", "./assets/images/main-images/notify-1.png", "Mĩ phẩm nam nữ", "Sản phẩm đẹp mắt alo lao laolll aloooa loa lao lao lao đẹp mắt alo lao laolll", "./assets/images/main-images/notify-more-1.jpg", "./assets/images/main-images/notify-more-2.jpg")
+                +notifyItem("#", "./assets/images/main-images/notify-1.png", "Mĩ phẩm nam nữ", "Sản phẩm đẹp mắt", "./assets/images/main-images/notify-more-1.jpg", "./assets/images/main-images/notify-more-2.jpg", "./assets/images/main-images/notify-more-3.jpg")
                 +notifyItem("#", "./assets/images/main-images/notify-1.png", "Mĩ phẩm nam nữ", "Sản phẩm đẹp mắt")
               .header-nav-notify-bottom
                 a.header-nav-notify-bottom-link(href='#') Xem thêm các thông báo
@@ -42,25 +42,28 @@ header.header
               ul.header-nav-language-list
                 li.header-nav-language-item Tiếng Việt
                 li.header-nav-language-item English
-          li.header-nav-item.nav-divided
-            span.header-nav-item-text.fw-400 Đăng ký
-          li.header-nav-item.nav-divided
-            span.header-nav-item-text.fw-400 Đăng nhập
-          li.header-nav-item.nav-divided.header-nav-user
-            .header-nav-user-icon
-              i.fa-regular.fa-user-circle
-            span.header-nav-item-text.fw-400 dangcapcuawin
-            .header-nav-user-content
-              ul.header-nav-user-list
-                li.header-nav-user-list-item
-                  a.header-nav-user-list-item-link(href='#')
-                    span.header-nav-user-list-item-text Tài khoản của tôi
-                li.header-nav-user-list-item
-                  a.header-nav-user-list-item-link(href='#')
-                    span.header-nav-user-list-item-text Cài đặt
-                li.header-nav-user-list-item
-                  a.header-nav-user-list-item-link(href='#')
-                    span.header-nav-user-list-item-text Đăng xuất
+          - var auth = true; // false: not login, true: login
+          if !auth
+            li.header-nav-item.nav-divided
+              a(href="#").header-nav-item-text.fw-400 Đăng ký
+            li.header-nav-item.nav-divided
+              a(href="#").header-nav-item-text.fw-400 Đăng nhập
+          else
+            li.header-nav-item.nav-divided.header-nav-user
+              .header-nav-user-icon
+                i.fa-regular.fa-user-circle
+              span.header-nav-item-text.fw-400 dangcapcuawin
+              .header-nav-user-content
+                ul.header-nav-user-list
+                  li.header-nav-user-list-item
+                    a.header-nav-user-list-item-link(href='#')
+                      span.header-nav-user-list-item-text Tài khoản của tôi
+                  li.header-nav-user-list-item
+                    a.header-nav-user-list-item-link(href='#')
+                      span.header-nav-user-list-item-text Cài đặt
+                  li.header-nav-user-list-item
+                    a.header-nav-user-list-item-link(href='#')
+                      span.header-nav-user-list-item-text Đăng xuất
       .header-main
         .header-main-logo
           a(href='#')
@@ -79,14 +82,16 @@ header.header
               +searchRecommendItem('Vans')
               +searchRecommendItem('Converse')
               +searchRecommendItem('Puma')
-              +searchRecommendItem('Asics')
+              +searchRecommendItem('Asicsa')
         .header-main-shoppingcart
           .header-main-shoppingcart-icon
             svg.header-main-shoppingcart-icon-svg(viewbox='0 0 26.6 25.6')
               polyline(fill='none' points='2 1.7 5.5 1.7 9.6 18.3 21.2 18.3 24.6 6.1 7 6.1' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' stroke-width='2.5')
               circle(cx='10.7' cy='23' r='2.2' stroke='none')
               circle(cx='19.7' cy='23' r='2.2' stroke='none')
-            .header-main-shoppingcart-count 0
+            - var shoppingcartCount = 5;
+            .header-main-shoppingcart-count
+              span= shoppingcartCount
           .header-main-shoppingcart-content
             ul.header-main-shoppingcart-list
               - var empty = false // set to false to show items in cart
@@ -101,3 +106,6 @@ header.header
                 +shoppingcartItem('#', './assets/images/main-images/shoppingcart-item-1.png', 'Nike Air Max 1', '1.000.000đ')
                 +shoppingcartItem('#', './assets/images/main-images/shoppingcart-item-1.png', 'Nike Air Max 1 Nike Air Max 1 Nike Air Max 1 Nike Air Max 1', '1.000.000đ')
                 +shoppingcartItem('#', './assets/images/main-images/shoppingcart-item-1.png', 'Nike Air Max 1', '1.000.000đ')
+                .header-main-shoppingcart-list-bottom
+                  a(href='').header-main-shoppingcart-list-bottom-button
+                    span Xem Giỏ Hàng
