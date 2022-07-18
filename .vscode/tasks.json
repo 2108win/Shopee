@@ -7,6 +7,11 @@
       "label": "Run sass",
       "type": "shell",
       "command": "sass assets/sass/app.scss assets/css/app.css --watch",
+    },
+    {
+      "label": "Run pug",
+      "type": "shell",
+      "command": "pug index.pug --watch --pretty",
     }
   ]
 }
