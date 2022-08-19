@@ -24,3 +24,7 @@ mixin shoppingcartItem(link, image, name, price)
         .header-main-shoppingcart-list-item-content-text
           .header-main-shoppingcart-list-item-content-text-name= name
           .header-main-shoppingcart-list-item-content-text-price= price
+
+mixin bannerSlideShowItem(link, image)
+  a(href=link)
+    img.banner-main-left-img(src= image, alt='')

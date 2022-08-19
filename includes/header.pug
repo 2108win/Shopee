@@ -50,7 +50,7 @@ header.header
               a(href="#").header-nav-item-text.fw-400 Đăng nhập
           else
             li.header-nav-item.nav-divided.header-nav-user
-              .header-nav-user-icon
+              .header-nav-user-img
                 i.fa-regular.fa-user-circle
               span.header-nav-item-text.fw-400 dangcapcuawin
               .header-nav-user-content
@@ -89,9 +89,8 @@ header.header
               polyline(fill='none' points='2 1.7 5.5 1.7 9.6 18.3 21.2 18.3 24.6 6.1 7 6.1' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' stroke-width='2.5')
               circle(cx='10.7' cy='23' r='2.2' stroke='none')
               circle(cx='19.7' cy='23' r='2.2' stroke='none')
-            - var shoppingcartCount = 5;
             .header-main-shoppingcart-count
-              span= shoppingcartCount
+              span#shoppingcartCount
           .header-main-shoppingcart-content
             ul.header-main-shoppingcart-list
               - var empty = false // set to false to show items in cart
