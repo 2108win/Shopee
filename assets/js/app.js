@@ -18,4 +18,9 @@ $(document).ready(function () {
   });
 });
 
-$('.single-item').slick();
+$('.category-list-slideshow').slick({
+  slidesToShow: 10,
+  slidesToScroll: 3,
+  infinite: false,
+  dragable: false,
+});

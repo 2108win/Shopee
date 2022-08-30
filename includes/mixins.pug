@@ -28,3 +28,15 @@ mixin shoppingcartItem(link, image, name, price)
 mixin bannerSlideShowItem(link, image)
   a(href=link)
     img.banner-main-left-img(src= image, alt='')
+
+mixin bannerListItem(link, image, name)
+  .banner-list-item
+    a.banner-list-item-link(href= link)
+      img.banner-list-item-img(src= image, alt='')
+      p.banner-list-item-name= name
+
+mixin categoryItem(link, image, name)
+  a.category-item-link(href= link)
+    .category-list-item
+      img.category-item-img(src= image, alt='')
+      p.category-item-name= name
